@@ -1,0 +1,31 @@
+{
+  "name": "chromiumify",
+  "version": "1.0.0",
+  "description": "A command line client for the chromiumify libraries",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && node test/run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chromiumify/chromiumify.git"
+  },
+  "keywords": [
+    "chromiumify",
+    "chrome",
+    "CPA"
+  ],
+  "author": "anton whalley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chromiumify/chromiumify/issues"
+  },
+  "homepage": "https://github.com/chromiumify/chromiumify",
+  "dependencies": {
+    "browserify": "^10.2.4",
+    "shelljs": "^0.5.1"
+  },
+  "bin": {
+    "chromiumify": "./index.js"
+  }
+}
