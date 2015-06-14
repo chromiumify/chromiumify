@@ -1,9 +1,14 @@
 #! /usr/bin/env node
 var shell = require('shelljs')
 var os = require('os')
-
+var path = require('path')
 var args = process.argv.slice(2).join(' ')
+
 switch (process.argv[2]) {
+  case 'gen':
+    shell.cp('-R', __dirname + '/templates/*', process.argv[3]);
+  break
+
   case 'init':
     shell.exec('npm install chrome-net http-node chrome-fs chrome-dgram ' + args)
   break
