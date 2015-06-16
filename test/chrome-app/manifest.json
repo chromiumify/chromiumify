@@ -14,7 +14,7 @@
   
   "sockets": {
     "tcp": {
-      "connect": ["*:80"]
+      "connect": ["*:1337"]
     },
     "tcpServer" : {
       "listen": [":1337"]

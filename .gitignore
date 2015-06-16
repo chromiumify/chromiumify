@@ -29,3 +29,4 @@ node_modules
 # Chromiumify test output
 
 test/chrome-app/background.js
+test/chrome-app/manifest.mobile.json
