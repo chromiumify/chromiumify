@@ -27,4 +27,4 @@ setTimeout(function () {
   }
 
   http.request(options, callback).end()
-}, 2000)
+}, 3000)

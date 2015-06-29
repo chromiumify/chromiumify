@@ -1,10 +1,25 @@
 #! /usr/bin/env node
 var shell = require('shelljs')
 var os = require('os')
+var yargs = require('yargs')
+
+yargs.usage('$0 command')
+  .command('gen', 'generate a baseline chrome project (Expects a directory as an parameter)')
+  .command('init', 'initialise the current directory with node for chrome apps. (Use -S to save to package.json)')
+  .command('run', 'run the your app (expects a directory as an argument)')
+  .command('', 'runs browserify with the corrent node for chrome apps configuration')
+  .help('h')
+  .alias('h', 'help')
+  .argv
+
 var args = process.argv.slice(2).join(' ')
 
 switch (process.argv[2]) {
   case 'gen':
+    if (!process.argv[3]) {
+      console.log('gen requires a target directory')
+      process.exit(1)
+    }
     shell.cp('-R', __dirname + '/templates/*', process.argv[3])
   break
 
@@ -13,6 +28,10 @@ switch (process.argv[2]) {
   break
 
   case 'run':
+  if (!process.argv[3]) {
+    console.log('run requires a target directory')
+    process.exit(1)
+  }
   var CHROME = process.env.CHROME
   switch (os.platform()) {
     case 'win32' :
