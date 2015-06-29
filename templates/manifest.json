@@ -12,14 +12,15 @@
     }
   },
   "permissions": [
-    "unlimitedStorage"
+    "unlimitedStorage",
+    "system.network"
   ],
   "sockets": {
     "tcp": {
-      "connect": ["*:80"]
+      "connect": ["*:*"]
     },
+    "udp": {"send":["*:*"], "bind":["*:*"]},
     "tcpServer" : {
       "listen": [":1337"]
     }
   }
-}
