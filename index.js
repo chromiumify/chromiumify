@@ -20,7 +20,7 @@ switch (process.argv[2]) {
       console.log('gen requires a target directory')
       process.exit(1)
     }
-    shell.cp('-R', __dirname + '/templates/*', process.argv[3])
+    shell.cp('-Rf', __dirname + '/templates/*', process.argv[3])
   break
 
   case 'init':

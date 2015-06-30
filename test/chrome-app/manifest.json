@@ -11,11 +11,15 @@
       ]
     }
   },
-  
+  "permissions": [
+    "unlimitedStorage",
+    "system.network"
+  ],
   "sockets": {
     "tcp": {
-      "connect": ["*:1337"]
+      "connect": ["*:*"]
     },
+    "udp": {"send":["*:*"], "bind":["*:*"], "multicastMembership": ""},
     "tcpServer" : {
       "listen": [":1337"]
     }

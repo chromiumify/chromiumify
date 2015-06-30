@@ -3,6 +3,7 @@ var http = require('http')
 var assert = require('assert')
 
 shell.exec('node index.js init')
+shell.exec('node index.js gen test/chrome-app')
 shell.exec('node index.js test/src/background.js -o test/chrome-app/background.js')
 shell.exec('node index.js run test/chrome-app')
 
