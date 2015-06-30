@@ -42,7 +42,7 @@ switch (process.argv[2]) {
       }
       break
     case 'darwin' :
-      CHROME = process.env.CHROME || '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+      CHROME = process.env.CHROME || '/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome'
       break
     case 'linux' :
       CHROME = process.env.CHROME || '/opt/google/chrome/chrome'
