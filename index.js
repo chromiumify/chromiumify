@@ -45,7 +45,7 @@ switch (process.argv[2]) {
       CHROME = process.env.CHROME || '/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome 2>/dev/null'
       break
     case 'linux' :
-      CHROME = process.env.CHROME || '/opt/google/chrome/chrome 2>/dev/null'
+      CHROME = process.env.CHROME || '/opt/google/chrome/chrome > /dev/null 2>&1 &'
       break
     default :
       break
