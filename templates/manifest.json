@@ -19,7 +19,7 @@
     "tcp": {
       "connect": ["*:*"]
     },
-    "udp": {"send":["*:*"], "bind":["*:*"]},
+    "udp": {"send":["*:*"], "bind":["*:*"], "multicastMembership": ""},
     "tcpServer" : {
       "listen": [":1337"]
     }
