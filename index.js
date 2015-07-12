@@ -24,10 +24,13 @@ switch (process.argv[2]) {
   break
 
   case 'init':
-    shell.exec('npm install chrome-net http-node chrome-fs chrome-dgram ' + args)
+    shell.exec('npm install chrome-net http-node chrome-fs chrome-dgram ' + args.split(' ').slice(1).join(' '))
   break
 
   case 'run':
+  var app = process.cwd() + '/' + process.argv[3]
+  var command = ' --load-and-launch-app=' + app
+
   if (!process.argv[3]) {
     console.log('run requires a target directory')
     process.exit(1)
@@ -36,24 +39,21 @@ switch (process.argv[2]) {
   switch (os.platform()) {
     case 'win32' :
       if (process.arch === 'x64') {
-        CHROME = process.env.CHROME || '\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"'
+        CHROME = process.env.CHROME || '\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"' + command
       } else {
-        CHROME = process.env.CHROME || '\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"'
+        CHROME = process.env.CHROME || '\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"' + command
       }
       break
     case 'darwin' :
-      CHROME = process.env.CHROME || '/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome > /dev/null 2>&1 &'
+      CHROME = process.env.CHROME || '/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome' + command + ' > /dev/null 2>&1 &'
       break
     case 'linux' :
-      CHROME = process.env.CHROME || '/opt/google/chrome/chrome > /dev/null 2>&1 &'
+      CHROME = process.env.CHROME || '/opt/google/chrome/chrome' + command + '  > /dev/null 2>&1 &'
       break
     default :
       break
   }
-
-    var app = process.cwd() + '/' + process.argv[3]
-    var command = CHROME + ' --load-and-launch-app=' + app
-    shell.exec(command)
+  shell.exec(CHROME)
   break
 
   default:
