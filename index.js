@@ -24,7 +24,7 @@ switch (process.argv[2]) {
   break
 
   case 'init':
-    shell.exec('npm install chrome-net http-node chrome-fs chrome-dgram chrome-debug ' + args.split(' ').slice(1).join(' '))
+    shell.exec('npm install chrome-net http-node chrome-fs chrome-dgram chrome-debug chrome-depd ' + args.split(' ').slice(1).join(' '))
   break
 
   case 'run':
@@ -57,6 +57,6 @@ switch (process.argv[2]) {
   break
 
   default:
-    shell.exec('node ' + __dirname + '/node_modules/browserify/bin/cmd -r chrome-net:net -r http-node:http -r chrome-fs:fs -r chrome-dgram:dgram -r chrome-debug:debug ' + process.argv.slice(2).join(' '))
+    shell.exec('node ' + __dirname + '/node_modules/browserify/bin/cmd -r chrome-net:net -r http-node:http -r chrome-fs:fs -r chrome-dgram:dgram -r chrome-debug:debug -r chrome-depd:depd ' + process.argv.slice(2).join(' '))
     break
 }

@@ -1,3 +1,6 @@
+# 4.0.0 / 2015-07-18
+  * Added Support for chrome-depd
+  
 # 3.0.1 / 2015-07-18
 
   * npmignore
