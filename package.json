@@ -1,6 +1,6 @@
 {
   "name": "chromiumify",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "A command line client for the chromiumify libraries",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,8 @@
   "keywords": [
     "chromiumify",
     "chrome",
-    "CPA"
+    "CPA",
+    "browserify-tool"
   ],
   "author": "anton whalley",
   "license": "MIT",
