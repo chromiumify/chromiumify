@@ -1,6 +1,6 @@
 {
   "name": "chromiumify",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "A command line client for the chromiumify libraries",
   "main": "index.js",
   "scripts": {
