@@ -14,6 +14,17 @@ In your project initialise the node core modules
 ```sh
 $ chromiumify init
 ```
+This will install the chrome app modules that support running node. 
+
+  * chrome-net 
+  * http-node 
+  * chrome-fs 
+  * chrome-dgram 
+  * chrome-debug 
+  * chrome-depd 
+  * chrome-path 
+  * chrome-https 
+  * chrome-util-deprecate
 
 Run a build with the usual browserify parameters 
 

@@ -1,6 +1,6 @@
 {
   "name": "chromiumify",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "description": "A command line client for the chromiumify libraries",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/chromiumify/chromiumify",
   "dependencies": {
     "browserify": "^10.2.4",
+    "launch-chrome-app": "^1.0.1",
     "shelljs": "^0.5.1",
     "yargs": "^3.14.0"
   },

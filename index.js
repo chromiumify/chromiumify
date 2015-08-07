@@ -20,11 +20,30 @@ switch (process.argv[2]) {
       console.log('gen requires a target directory')
       process.exit(1)
     }
-    shell.cp('-Rf', __dirname + '/templates/*', process.argv[3])
+    shell.cp('-Rf', __dirname + '/templates/gen/*', process.argv[3])
+  break
+
+  case 'postinstall':
+    if (!process.argv[3]) {
+      console.log('postinstall requires a directory to store the post install script')
+      process.exit(1)
+    }
+    if (!process.argv[4]) {
+      console.log('postinstall requires the target directory of the chrome app')
+      process.exit(1)
+    }
+    shell.exec('npm install launch-chrome-app -S')
+    shell.cp('-Rf', __dirname + '/templates/postinstall/*', process.argv[3]) 
+    // add postinstall to package.json
+    var pkg = {}
+    if (typeof pkg.scripts.postinstall === 'undefined') {
+      pkg.scripts.postinstall = 'node ' + postinstall + '/postinstall.js ' + process.argv[4]
+    }
+    
   break
 
   case 'init':
-    shell.exec('npm install chrome-net http-node chrome-fs chrome-dgram chrome-debug chrome-depd chrome-path chrome-https ' + args.split(' ').slice(1).join(' '))
+    shell.exec('npm install chrome-net http-node chrome-fs chrome-dgram chrome-debug chrome-depd chrome-path chrome-https chrome-util-deprecate ' + args.split(' ').slice(1).join(' '))
   break
 
   case 'run':
@@ -57,6 +76,6 @@ switch (process.argv[2]) {
   break
 
   default:
-    shell.exec('node ' + __dirname + '/node_modules/browserify/bin/cmd -r chrome-net:net -r http-node:http -r chrome-fs:fs -r chrome-dgram:dgram -r chrome-debug:debug -r chrome-depd:depd -r chrome-path:path -r chrome-https:https ' + process.argv.slice(2).join(' '))
+    shell.exec('node ' + __dirname + '/node_modules/browserify/bin/cmd -r chrome-net:net -r http-node:http -r chrome-fs:fs -r chrome-dgram:dgram -r chrome-debug:debug -r chrome-depd:depd -r chrome-path:path -r chrome-https:https -r chrome-util-deprecate:util-deprecate ' + process.argv.slice(2).join(' '))
     break
 }
