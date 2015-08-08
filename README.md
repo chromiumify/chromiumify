@@ -38,14 +38,13 @@ Run your application
 $ chromiumify run test/chrome-app
 ```
 
-If you checkout this repo the above commands will generate and run a chrome packaged app
+Prepare to publish your app in NPM 
 
 ```sh
-$ git clone https://github.com/chromiumify/chromiumify.git
-$ cd chromiumify
+$ chromiumify npmpkg . test/chrome-app
 ```
 
-Thanks to the following people who made this small tool possible
+Thanks to the following people who made this tool possible
 
 <table><tbody>
 <tr><th align="left">Feross Aboukhadijeh</th><td><a href="https://github.com/feross">GitHub/feross</a></td><td><a href="https://twitter.com/feross">Twitter/@feross</a></td></tr>
