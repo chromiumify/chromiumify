@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/chromiumify/chromiumify",
   "dependencies": {
-    "browserify": "^10.2.4",
+    "browserify": "^13.0.1",
     "launch-chrome-app": "^1.0.1",
     "shelljs": "^0.5.1",
     "yargs": "^3.14.0"
